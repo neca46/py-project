@@ -17,9 +17,5 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
-        with: 
-          name: my-artifact
-          path: path/to/artifact
       - run: make py/codestyle
   
