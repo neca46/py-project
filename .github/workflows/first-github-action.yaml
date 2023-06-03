@@ -2,6 +2,7 @@ name: first-github-action
 on:
   pull_request:
     branch: [ master ]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
