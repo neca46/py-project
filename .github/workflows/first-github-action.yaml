@@ -21,4 +21,10 @@ jobs:
       - run: |
           make py/packages
           make py/codestyle
+  shell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echoing...s
+        run: echo "hello shell"
+        shell: bash
   
