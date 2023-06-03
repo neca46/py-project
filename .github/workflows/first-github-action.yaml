@@ -1,0 +1,24 @@
+name: first-github-action
+on:
+  pull_request:
+    branch: [ master ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: make py/packages
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: path/to/artifact/ # or path/to/artifact
+  codestyle:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          make py/packages
+          make py/codestyle
+  
